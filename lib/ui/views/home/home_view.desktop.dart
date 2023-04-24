@@ -33,11 +33,11 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                 tileMode: TileMode.repeated,
               ),
             ),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(40, 20, 10, 8),
-                  child: Row(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(40, 20, 10, 8),
+              child: Column(
+                children: [
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Row(
@@ -107,8 +107,147 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ],
                   ),
-                ),
-              ],
+                  SizedBox(
+                    height: size.width * 0.1,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: size.width * 0.1,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Hello, i am',
+                            style: TextStyle(
+                              color: kcWhite,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(
+                            height: size.width * 0.02,
+                          ),
+                          const Text(
+                            '< UTTKARSH',
+                            style: TextStyle(
+                              color: Color.fromRGBO(57, 255, 20, 1),
+                              fontSize: 45,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(
+                            height: size.width * 0.02,
+                          ),
+                          const Text(
+                            'RAJ />',
+                            style: TextStyle(
+                              color: Color.fromRGBO(57, 255, 20, 1),
+                              fontSize: 45,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(
+                            height: size.width * 0.02,
+                          ),
+                          const Text(
+                            'Mobile App Developer',
+                            style: TextStyle(
+                              color: kcWhite,
+                              fontSize: 37,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(
+                            height: size.width * 0.028,
+                          ),
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      const Text(
+                                        '1+ ',
+                                        style: TextStyle(
+                                          color: kcMediumGrey,
+                                          fontSize: 57,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: const [
+                                          Text(
+                                            'YEAR OF',
+                                            style: TextStyle(
+                                              color: kcMediumGrey,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            'EXPERIENCE',
+                                            style: TextStyle(
+                                              color: kcMediumGrey,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        width: size.width * 0.02,
+                                      ),
+                                      const Text(
+                                        '5+ ',
+                                        style: TextStyle(
+                                          color: kcMediumGrey,
+                                          fontSize: 57,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: const [
+                                          Text(
+                                            'PROJECTS COMPLETED',
+                                            style: TextStyle(
+                                              color: kcMediumGrey,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            'WITH FLUTTER',
+                                            style: TextStyle(
+                                              color: kcMediumGrey,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ],
