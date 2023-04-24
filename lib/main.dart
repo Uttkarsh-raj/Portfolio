@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveApp(
         builder: (_) => MaterialApp.router(
+              debugShowCheckedModeBanner: false,
               title: 'Stacked Application',
               theme: Theme.of(context).copyWith(
                 primaryColor: kcBackgroundColor,
