@@ -4,7 +4,10 @@ import 'package:portfolio/ui/widgets/buttons/grey_button.dart';
 import 'package:portfolio/ui/widgets/buttons/icon_text_button.dart';
 import 'package:portfolio/ui/widgets/buttons/text_button.dart';
 import 'package:portfolio/ui/widgets/ui_components/circular_frame.dart';
+import 'package:portfolio/ui/widgets/ui_components/list_item.dart';
+import 'package:portfolio/ui/widgets/ui_components/list_view.dart';
 import 'package:portfolio/ui/widgets/ui_components/skills_tab.dart';
+import 'package:scroll_snap_list/scroll_snap_list.dart';
 import 'package:stacked/stacked.dart';
 
 import 'home_viewmodel.dart';
@@ -477,7 +480,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                 ),
                               ),
                               SizedBox(
-                                height: size.width * 0.04,
+                                height: size.width * 0.06,
                               ),
                               SizedBox(
                                 width: size.width * 0.72,
@@ -534,12 +537,71 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                 ),
                               ),
                               SizedBox(
-                                height: size.width * 0.076,
+                                height: size.width * 0.1,
                               )
                             ],
                           ),
                         ],
                       ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              height: size.width * 0.5,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color.fromARGB(255, 21, 21, 21),
+                    Color.fromRGBO(33, 33, 33, 1),
+                    Color.fromRGBO(66, 66, 66, 1),
+                    Color.fromRGBO(58, 58, 58, 1),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  tileMode: TileMode.repeated,
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(40, 20, 10, 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: size.width * 0.1,
+                    ),
+                    Column(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: size.width * 0.06,
+                            ),
+                            const Text(
+                              'Projects( )',
+                              style: TextStyle(
+                                color: Color.fromRGBO(57, 255, 20, 1),
+                                fontSize: 45,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Container(
+                              // color: Colors.red,
+                              height: size.width * 0.3,
+                              width: size.width * 0.8,
+                              // child: const CListView(),
+                              child: Row(
+                                children: [
+                                  CListItem(),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),
