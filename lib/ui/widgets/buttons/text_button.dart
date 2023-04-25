@@ -9,7 +9,7 @@ class CTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: TextStyle(
+      style: const TextStyle(
         color: kcWhite,
         fontSize: 18,
         fontWeight: FontWeight.w600,
