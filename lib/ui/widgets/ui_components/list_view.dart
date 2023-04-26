@@ -36,28 +36,26 @@ class _CListViewState extends State<CListView> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Expanded(
-      child: ScrollSnapList(
-        onItemFocus: _onItemFocus,
-        itemSize: size.width * 0.1,
-        curve: Curves.ease,
-        itemBuilder: (context, index) {
-          return Row(
-            children: [
-              CListItem(
-                title: titles[index],
-                discription: discriptions[index],
-              ),
-              SizedBox(
-                width: size.width * 0.002,
-              )
-            ],
-          );
-        },
-        itemCount: 5,
-        dynamicItemSize: true,
-        // dynamicSizeEquation: customEquation, //optional
-      ),
+    return ScrollSnapList(
+      onItemFocus: _onItemFocus,
+      itemSize: size.width * 0.1,
+      curve: Curves.ease,
+      itemBuilder: (context, index) {
+        return Row(
+          children: [
+            CListItem(
+              title: titles[index],
+              discription: discriptions[index],
+            ),
+            SizedBox(
+              width: size.width * 0.002,
+            )
+          ],
+        );
+      },
+      itemCount: 5,
+      dynamicItemSize: true,
+      // dynamicSizeEquation: customEquation, //optional
     );
   }
 }
