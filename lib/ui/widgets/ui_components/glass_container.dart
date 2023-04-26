@@ -3,14 +3,17 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'package:portfolio/ui/common/app_colors.dart';
 
 class GlassMorphedContainer extends StatelessWidget {
-  const GlassMorphedContainer({super.key});
+  const GlassMorphedContainer(
+      {super.key, required this.title, required this.discription});
+  final String title;
+  final String discription;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return GlassmorphicContainer(
       width: double.maxFinite,
-      height: size.width * 0.097,
+      height: size.width * 0.09,
       borderRadius: 8,
       blur: 2,
       alignment: Alignment.center,
@@ -27,32 +30,36 @@ class GlassMorphedContainer extends StatelessWidget {
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors: [
-          const Color.fromARGB(255, 239, 243, 242).withOpacity(0),
-          const Color.fromARGB(255, 230, 237, 236).withOpacity(0),
+          const Color.fromARGB(255, 239, 243, 242).withOpacity(0.1),
+          const Color.fromARGB(255, 230, 237, 236).withOpacity(0.1),
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.fromLTRB(12, 8, 8, 0),
         child: Column(
-          children: const [
-            Text(
-              'Hello, world!',
-              style: TextStyle(
-                fontSize: 20,
-                color: kcWhite,
-              ),
-            ),
-            Text('Hello, world!',
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                title,
                 style: TextStyle(
                   fontSize: 20,
-                  color: kcWhite,
-                )),
-            Text(
-              'Hello, world!',
-              style: TextStyle(
-                fontSize: 20,
-                color: kcWhite,
+                  color: kcWhite.withOpacity(0.8),
+                  fontWeight: FontWeight.w500,
+                ),
               ),
+            ),
+            SizedBox(
+              height: size.width * 0.008,
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(discription,
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: kcWhite.withOpacity(0.8),
+                    fontWeight: FontWeight.w100,
+                  )),
             ),
           ],
         ),

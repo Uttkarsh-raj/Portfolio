@@ -588,15 +588,15 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               // color: Colors.red,
                               height: size.width * 0.3,
                               width: size.width * 0.8,
-                              // child: const CListView(),
-                              child: Row(
-                                children: [
-                                  CListItem(),
-                                ],
+                              child: const Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: Center(
+                                  child: CListView(),
+                                ),
                               ),
                             ),
                           ],

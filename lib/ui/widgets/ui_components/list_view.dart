@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/widgets/ui_components/list_item.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
 
 class CListView extends StatefulWidget {
@@ -11,17 +10,7 @@ class CListView extends StatefulWidget {
 }
 
 class _CListViewState extends State<CListView> {
-  List<int> data = [];
   int _focusedIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-
-    for (int i = 0; i < 30; i++) {
-      data.add(Random().nextInt(100) + 1);
-    }
-  }
 
   void _onItemFocus(int index) {
     setState(() {
@@ -29,65 +18,43 @@ class _CListViewState extends State<CListView> {
     });
   }
 
-  Widget _buildListItem(BuildContext context, int index) {
-    //horizontal
-    return Container(
-      width: 35,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.lightBlueAccent,
-            child: Text("i:$index\n${data[index]}"),
-          )
-        ],
-      ),
-    );
-  }
-
-  List<Container> l = [
-    Container(
-      height: 100,
-      width: 100,
-      color: Colors.blue,
-    ),
-    Container(
-      height: 100,
-      width: 100,
-      color: Colors.blue,
-    ),
-    Container(
-      height: 100,
-      width: 100,
-      color: Colors.blue,
-    ),
-    Container(
-      height: 100,
-      width: 100,
-      color: Colors.blue,
-    ),
-    Container(
-      height: 100,
-      width: 100,
-      color: Colors.blue,
-    ),
-    Container(),
-    Container(),
-    Container()
+  List<String> titles = [
+    'Quev',
+    'Re-Bin',
+    'QR-Scanner',
+    'Text-Scanner',
+    'Library-CLI'
+  ];
+  List<String> discriptions = [
+    'Quev is a very handy application which helps you locate the nearby Electric Vehicle\'s (EV) charging station. It also tells the shortest path to the charging station.',
+    'Re-Bin is an application where you can donate your food which can help feed the hunger and in making compost. You get reward points for each donation and you can claim the rewards later.',
+    'A simple application that can scan any QR code and it shows all the apps that can open the link. or directly launch on the brower.',
+    'ScanIt is an application which allows you to either choose a picture or click a picture and then detects and displays all the text . Using the speaker button you can convert the text to speech.',
+    'A Comand Line Interface for Library managemant using Golang and kobra-CLi where you can add remove get issued data and get a tabulated output.',
   ];
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Expanded(
       child: ScrollSnapList(
         onItemFocus: _onItemFocus,
-        itemSize: 150,
+        itemSize: size.width * 0.1,
+        curve: Curves.ease,
         itemBuilder: (context, index) {
-          return l[index];
+          return Row(
+            children: [
+              CListItem(
+                title: titles[index],
+                discription: discriptions[index],
+              ),
+              SizedBox(
+                width: size.width * 0.002,
+              )
+            ],
+          );
         },
-        itemCount: 7,
+        itemCount: 5,
         dynamicItemSize: true,
         // dynamicSizeEquation: customEquation, //optional
       ),
