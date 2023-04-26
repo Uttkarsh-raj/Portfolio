@@ -4,11 +4,10 @@ import 'package:portfolio/ui/widgets/buttons/grey_button.dart';
 import 'package:portfolio/ui/widgets/buttons/icon_text_button.dart';
 import 'package:portfolio/ui/widgets/buttons/text_button.dart';
 import 'package:portfolio/ui/widgets/ui_components/circular_frame.dart';
-import 'package:portfolio/ui/widgets/ui_components/list_item.dart';
 import 'package:portfolio/ui/widgets/ui_components/list_view.dart';
 import 'package:portfolio/ui/widgets/ui_components/skills_tab.dart';
-import 'package:scroll_snap_list/scroll_snap_list.dart';
 import 'package:stacked/stacked.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'home_viewmodel.dart';
 
@@ -90,23 +89,50 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const CIconTextButton(
-                              title: 'LinkedIn',
-                              assetImage: 'assets/logos/linkedin.png',
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {
+                                  launchUrl(Uri.parse(
+                                      'https://www.linkedin.com/in/uttkarsh-raj-a40a0b246/'));
+                                },
+                                child: const CIconTextButton(
+                                  title: 'LinkedIn',
+                                  assetImage: 'assets/logos/linkedin.png',
+                                ),
+                              ),
                             ),
                             SizedBox(
                               width: size.width * 0.03,
                             ),
-                            const CIconTextButton(
-                              title: 'Github',
-                              assetImage: 'assets/logos/github.png',
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {
+                                  launchUrl(Uri.parse(
+                                      'https://github.com/Uttkarsh-raj'));
+                                },
+                                child: const CIconTextButton(
+                                  title: 'Github',
+                                  assetImage: 'assets/logos/github.png',
+                                ),
+                              ),
                             ),
                             SizedBox(
                               width: size.width * 0.03,
                             ),
-                            const CIconTextButton(
-                              title: 'Contact me',
-                              icon: Icons.email_outlined,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {
+                                  launchUrl(Uri.parse(
+                                      'mailto:uttkarshraj.me@gmail.com'));
+                                },
+                                child: const CIconTextButton(
+                                  title: 'Contact me',
+                                  icon: Icons.email_outlined,
+                                ),
+                              ),
                             ),
                             SizedBox(
                               width: size.width * 0.03,
@@ -549,7 +575,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
               ),
             ),
             Container(
-              height: size.width * 0.5,
+              height: size.width * 0.4,
               width: double.infinity,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -589,9 +615,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                               ),
                             ),
                             SizedBox(
-                              // color: Colors.red,
-                              height: size.width * 0.3,
-                              width: size.width * 0.8,
+                              height: size.width * 0.2,
+                              width: size.width * 0.83,
                               child: const Padding(
                                 padding: EdgeInsets.all(10.0),
                                 child: Center(

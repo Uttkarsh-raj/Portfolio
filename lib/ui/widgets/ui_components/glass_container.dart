@@ -43,20 +43,20 @@ class GlassMorphedContainer extends StatelessWidget {
               child: Text(
                 title,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 19,
                   color: kcWhite.withOpacity(0.8),
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ),
             SizedBox(
-              height: size.width * 0.008,
+              height: size.width * 0.006,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(discription,
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 13.5,
                     color: kcWhite.withOpacity(0.8),
                     fontWeight: FontWeight.w100,
                   )),
