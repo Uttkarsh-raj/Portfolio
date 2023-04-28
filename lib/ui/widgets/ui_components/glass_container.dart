@@ -50,7 +50,7 @@ class GlassMorphedContainer extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.width * 0.006,
+              height: size.width * 0.0052,
             ),
             Align(
               alignment: Alignment.centerLeft,

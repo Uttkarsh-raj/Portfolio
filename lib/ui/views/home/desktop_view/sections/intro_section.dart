@@ -1,14 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:hovering/hovering.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../../../../common/app_colors.dart';
 import '../../../../widgets/ui_components/circular_frame.dart';
+import '../../../../widgets/ui_components/hover_shimmer.dart';
 
-class IntroSection extends StatelessWidget {
+class IntroSection extends StatefulWidget {
   const IntroSection({super.key});
+
+  @override
+  State<IntroSection> createState() => _IntroSectionState();
+}
+
+class _IntroSectionState extends State<IntroSection>
+    with TickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 1),
+      vsync: this,
+    )..repeat(); // Loop the animation.
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -148,19 +176,26 @@ class IntroSection extends StatelessWidget {
         ),
         Flexible(
             child: SizedBox(
-          height: size.width * 0.3,
+          height: size.width * 0.33,
           width: double.maxFinite,
           child: Stack(
             children: [
               Positioned(
                 top: size.width * 0.035,
                 left: size.width * 0.06,
-                child: CircularFrame(
-                  offset: true,
-                  shadows: true,
-                  backgroundColor: const Color.fromARGB(255, 43, 43, 43),
-                  image: 'assets/images/avatar.png',
-                  radius: size.width * 0.12,
+                child: HoverShimmer(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(4, 3, 0, 0),
+                    child: CircularFrame(
+                      offset: true,
+                      shadows: true,
+                      backgroundColor: const Color.fromARGB(255, 43, 43, 43),
+                      image: 'assets/images/avatar.png',
+                      radius: size.width * 0.12,
+                    ),
+                  ),
+                  shimmerRadius: size.width * 0.12,
+                  animatedPadding: true,
                 ),
               ),
               Positioned(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hovering/hovering.dart';
 
 class CircularFrame extends StatelessWidget {
   const CircularFrame(
@@ -34,7 +35,9 @@ class CircularFrame extends StatelessWidget {
         backgroundColor: backgroundColor,
         radius: radius,
         child: Padding(
-          padding: const EdgeInsets.all(4.0),
+          padding: (image == 'assets/images/avatar.png')
+              ? const EdgeInsets.fromLTRB(40, 4, 20, 10)
+              : const EdgeInsets.all(4.0),
           child: Container(
             child: (image != null)
                 ? Image.asset(
