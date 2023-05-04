@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:hovering/hovering.dart';
-import 'package:shimmer/shimmer.dart';
 
 import '../../../../common/app_colors.dart';
 import '../../../../widgets/ui_components/circular_frame.dart';
@@ -14,25 +11,7 @@ class IntroSection extends StatefulWidget {
   State<IntroSection> createState() => _IntroSectionState();
 }
 
-class _IntroSectionState extends State<IntroSection>
-    with TickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      duration: const Duration(seconds: 1),
-      vsync: this,
-    )..repeat(); // Loop the animation.
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
+class _IntroSectionState extends State<IntroSection> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -172,20 +151,19 @@ class _IntroSectionState extends State<IntroSection>
           ],
         ),
         SizedBox(
-          width: size.width * 0.02,
+          width: size.width * 0.05,
         ),
-        Flexible(
-            child: SizedBox(
-          height: size.width * 0.33,
-          width: double.maxFinite,
+        SizedBox(
+          height: size.width * 0.31,
+          width: size.width * 0.39,
           child: Stack(
             children: [
               Positioned(
                 top: size.width * 0.035,
-                left: size.width * 0.06,
+                left: size.width * 0.06, // Shimmer effect
                 child: HoverShimmer(
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(4, 3, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(5, 5, 0, 0),
                     child: CircularFrame(
                       offset: true,
                       shadows: true,
@@ -206,7 +184,7 @@ class _IntroSectionState extends State<IntroSection>
                   shadows: true,
                   backgroundColor: const Color.fromARGB(255, 43, 43, 43),
                   image: 'assets/logos/flutter.png',
-                  radius: size.width * 0.034,
+                  radius: size.width * 0.032,
                 ),
               ),
               Positioned(
@@ -221,7 +199,7 @@ class _IntroSectionState extends State<IntroSection>
               ),
               Positioned(
                 bottom: size.width * 0.1,
-                right: size.width * 0.114,
+                right: size.width * 0.066,
                 child: CircularFrame(
                   offset: true,
                   shadows: false,
@@ -230,8 +208,8 @@ class _IntroSectionState extends State<IntroSection>
                 ),
               ),
               Positioned(
-                top: size.width * 0.03,
-                right: size.width * 0.13,
+                top: size.width * 0.029,
+                right: size.width * 0.1,
                 child: CircularFrame(
                   offset: true,
                   shadows: false,
@@ -241,7 +219,7 @@ class _IntroSectionState extends State<IntroSection>
               ),
               Positioned(
                 bottom: size.width * 0.18,
-                right: size.width * 0.124,
+                right: size.width * 0.08,
                 child: CircularFrame(
                   offset: false,
                   shadows: true,
@@ -251,8 +229,8 @@ class _IntroSectionState extends State<IntroSection>
                 ),
               ),
               Positioned(
-                top: size.width * 0.22,
-                right: size.width * 0.14,
+                top: size.width * 0.222,
+                right: size.width * 0.0955,
                 child: CircularFrame(
                   offset: false,
                   shadows: true,
@@ -263,7 +241,7 @@ class _IntroSectionState extends State<IntroSection>
               ),
             ],
           ),
-        ))
+        )
       ],
     );
   }

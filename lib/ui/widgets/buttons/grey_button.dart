@@ -26,35 +26,35 @@ class GreyButton extends StatelessWidget {
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+            padding: const EdgeInsets.fromLTRB(20, 3, 0, 0),
             child: SizedBox(
               width: size.width * 0.16,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Flutter Developer',
-                    style: TextStyle(
+                  Text(
+                    title,
+                    style: const TextStyle(
                       color: kcWhite,
-                      fontSize: 20,
+                      fontSize: 30,
                       fontWeight: FontWeight.w500,
                       letterSpacing: 1.6,
                     ),
                   ),
-                  SizedBox(
-                    height: size.width * 0.008,
-                  ),
-                  const Text(
-                    'Projects',
-                    style: TextStyle(
-                      color: Color.fromRGBO(57, 255, 20, 1),
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400,
-                      decoration: TextDecoration.underline,
-                      letterSpacing: 1,
-                    ),
-                  ),
+                  // SizedBox(
+                  //   height: size.width * 0.008,
+                  // ),
+                  // const Text(
+                  //   'Projects',
+                  //   style: TextStyle(
+                  //     color: Color.fromRGBO(57, 255, 20, 1),
+                  //     fontSize: 18,
+                  //     fontWeight: FontWeight.w400,
+                  //     decoration: TextDecoration.underline,
+                  //     letterSpacing: 1,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
