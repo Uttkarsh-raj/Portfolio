@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Container(
-              // height: size.width * 0.5,
+              // height: size.width * 0.8,
               width: double.infinity,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -183,13 +183,10 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     SizedBox(
-                      height: size.width * 0.08,
+                      height: size.width * 0.12,
                     ),
                     //Introduction  Section
                     const IntroSection(),
-                    SizedBox(
-                      height: size.width * 0.1,
-                    ),
 
                     //About Section
                     const AboutSection(),

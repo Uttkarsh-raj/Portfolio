@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../widgets/buttons/grey_button.dart';
 
 class AboutSection extends StatelessWidget {
@@ -20,11 +20,11 @@ class AboutSection extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'AboutMe( )',
                     style: TextStyle(
-                      color: Color.fromRGBO(57, 255, 20, 1),
-                      fontSize: 45,
+                      color: const Color.fromRGBO(57, 255, 20, 1),
+                      fontSize: 45.sp,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -33,12 +33,12 @@ class AboutSection extends StatelessWidget {
                   ),
                   SizedBox(
                     width: size.width * 0.5,
-                    child: const Text(
+                    child: Text(
                       'Hii i am Uttkarsh Raj and I am a Flutter developer currently in my second year of college, I have a passion for programming and a deep interest in mobile app development. Over the past year, I have gained valuable experience working with Flutter and other programming languages, honing my skills in app design and development. I am constantly seeking new challenges and opportunities to learn and grow as a developer, whether through personal projects or collaborations with other developers. In my free time, I enjoy exploring new technologies, experimenting with different programming languages, and staying up-to-date with the latest trends and developments in the tech industry',
                       style: TextStyle(
                         wordSpacing: 1,
                         color: Colors.white70,
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),

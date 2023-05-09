@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/common/app_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GreyButton extends StatelessWidget {
   const GreyButton({super.key, required this.title, required this.assetimage});
@@ -35,9 +36,9 @@ class GreyButton extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: kcWhite,
-                      fontSize: 30,
+                      fontSize: 30.sp,
                       fontWeight: FontWeight.w500,
                       letterSpacing: 1.6,
                     ),
